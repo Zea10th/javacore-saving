@@ -2,6 +2,8 @@ import java.io.Serializable;
 
 public class GameProgress implements Serializable {
     private static final long serialVersionUID = 1L;
+    private static int exampleCounter = 0;
+    private int exampleNum;
 
     private int health;
     private int weapons;
@@ -13,6 +15,8 @@ public class GameProgress implements Serializable {
         this.weapons = weapons;
         this.lvl = lvl;
         this.distance = distance;
+        exampleCounter++;
+        exampleNum = exampleCounter;
     }
 
     @Override
@@ -23,5 +27,9 @@ public class GameProgress implements Serializable {
                 ", lvl=" + lvl +
                 ", distance=" + distance +
                 '}';
+    }
+
+    public int getExampleNum() {
+        return exampleNum;
     }
 }
